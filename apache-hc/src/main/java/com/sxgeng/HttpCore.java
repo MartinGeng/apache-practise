@@ -1,10 +1,17 @@
 package com.sxgeng;
 
 import org.apache.http.*;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.message.BasicHeaderElementIterator;
 import org.apache.http.message.BasicHttpRequest;
 import org.apache.http.message.BasicHttpResponse;
+import org.apache.http.params.HttpParams;
+import org.apache.http.util.EntityUtils;
 import org.junit.Test;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Locale;
 
 public class HttpCore {
 
@@ -54,6 +61,30 @@ public class HttpCore {
             NameValuePair[] params = element.getParameters();
             for (int i = 0; i < params.length; i++) {
                 System.out.println(" " + params[i]);
+            }
+        }
+    }
+
+    @Test
+    public void testHttpEntity() throws IOException {
+        StringEntity myEntity = new StringEntity("import Entity", Consts.UTF_8);
+        System.out.println(myEntity.getContentType());
+        System.out.println(myEntity.getContentLength());
+        System.out.println(EntityUtils.toByteArray(myEntity));
+        System.out.println(EntityUtils.toByteArray(myEntity).length);
+    }
+
+
+    @Test
+    public void testHttpResponse() throws IOException {
+        HttpResponse response = null;
+        HttpEntity entity = response.getEntity();
+        if (entity != null){
+            InputStream inputStream = entity.getContent();
+            try {
+                //do something useful
+            } finally {
+                inputStream.close();
             }
         }
     }
