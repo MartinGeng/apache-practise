@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/apache-hc/apache-hc.iml" filepath="$PROJECT_DIR$/apache-hc/apache-hc.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/apache-practise.iml" filepath="$PROJECT_DIR$/.idea/apache-practise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apachecommonsio/apachecommonsio.iml" filepath="$PROJECT_DIR$/apachecommonsio/apachecommonsio.iml" />
     </modules>
   </component>
 </project>
